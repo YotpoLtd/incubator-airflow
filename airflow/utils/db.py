@@ -211,6 +211,11 @@ def initdb(rbac=False):
             extra='{"db": 0}'))
     merge_conn(
         models.Connection(
+            conn_id='nomad_default', conn_type='nomad',
+            host='localhost', port=4646,
+        ))
+    merge_conn(
+        models.Connection(
             conn_id='sqoop_default', conn_type='sqoop',
             host='rmdbs', extra=''))
     merge_conn(
